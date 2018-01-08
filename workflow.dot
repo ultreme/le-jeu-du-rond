@@ -1,0 +1,23 @@
+digraph G {
+    start[shape=Mdiamond];
+    tape[shape=Msquare];
+    notape[label="et non :)",shape=Msquare];
+    irl[label="IRL ?"];
+    belt[label="en dessous de la ceinture du recepteur ?"];
+    direct[label="est-ce que le rond est visible en direct ?"];
+
+    {
+        edge[color="green"];
+        start->irl;
+        irl->direct[label="oui"];
+        direct->belt[label="oui"];
+        belt->tape[label="tape en moins de 30s"];
+    }
+    
+    {
+        edge[color="orange"];
+        irl->notape[label="non"];
+        direct->notape[label="non"];
+        belt->notape[label="non"];
+    }
+}
